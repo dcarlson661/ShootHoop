@@ -3,7 +3,8 @@ using System.Collections;
 
 public class BallLauncher : MonoBehaviour {
 
-    //this, BallSpawner, is on the maincamera in the UE
+    //this, BallSpawner, is on the maincamera in the UE.
+    //                   and the camera is a child of the player
     // here we are going to create a reference to our Basketball prefab
     // remember making it public makes it available in the UE
     public GameObject ballPrefab;
@@ -30,8 +31,10 @@ public class BallLauncher : MonoBehaviour {
             instance.transform.position = transform.position;
             //now we can use the instance to get componenets of the created object
             Rigidbody rb = instance.GetComponent<Rigidbody>();
+            //possible because the camera is a child and this script object is attached to the player
+            Camera camera = GetComponentInChildren<Camera>();
 
-            rb.velocity = Vector3.forward * ballSpeed;
+            rb.velocity = camera.transform.rotation * Vector3.forward * ballSpeed;
         }
     }
 

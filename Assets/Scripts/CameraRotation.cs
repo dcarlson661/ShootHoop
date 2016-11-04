@@ -27,7 +27,11 @@ public class CameraRotation : MonoBehaviour {
         //now apply the mouse location to the Quaternion (rotation) 
         // of the camera rotation (its view);
         camera                         = GetComponentInChildren<Camera>();
+        //transform is this (player), the camerarotation script that's on the player, think "body"
+        // this tilts the body, so to speak.
         transform.localRotation        = Quaternion.Euler(0f, mouseX, 0f)  * transform.localRotation;
+        //the camera is a child of Player and can be thought of as the head. (from the two cube example)
+        //  thus giving you two objects to rotate in game view when playing.
         camera.transform.localRotation = Quaternion.Euler(-mouseY, 0F, 0f) * camera.transform.localRotation;
 
     }
