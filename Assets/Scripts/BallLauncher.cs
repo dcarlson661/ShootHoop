@@ -21,6 +21,8 @@ public class BallLauncher : MonoBehaviour {
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            ScoreKeeper scoreKeeper = FindObjectOfType<ScoreKeeper>();
+            scoreKeeper.IncrementAttemps(1);
             //Instantiate returns a GameObject of <T> of what it created.
             GameObject instance = Instantiate(ballPrefab);
             //this ballspawner is on the camera, which is a child of player
