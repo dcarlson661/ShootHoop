@@ -22,6 +22,8 @@ public class ScoreKeeper : MonoBehaviour {
     public void IncrementScore(int amount)
     {
         score += amount;
+        AudioSource source = GetComponent<AudioSource>();
+        source.Play();
     }
     public void IncrementAttemps(int amount)
     {

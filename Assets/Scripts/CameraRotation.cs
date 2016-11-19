@@ -8,14 +8,14 @@ public class CameraRotation : MonoBehaviour {
     //   by changing our tranform rotation based on mouse or joystick
     //basically it changes what direction we're looking at through the camera
 
-    private Camera camera;
+    //private Camera camera;
 
     public float rotationSpeed = 5.0f;
 
 	// Use this for initialization
 	void Start ()
     {
-        Camera camera = GetComponentInChildren<Camera>();
+       // Camera camera = GetComponentInChildren<Camera>();
 	}
 	
 	// Update is called once per frame
@@ -26,7 +26,7 @@ public class CameraRotation : MonoBehaviour {
         float mouseY = Input.GetAxis("Mouse Y") * rotationSpeed;
         //now apply the mouse location to the Quaternion (rotation) 
         // of the camera rotation (its view);
-        camera                         = GetComponentInChildren<Camera>();
+        Camera camera = GetComponentInChildren<Camera>();
         //transform is this (player), the camerarotation script that's on the player, think "body"
         // this tilts the body, so to speak.
         transform.localRotation        = Quaternion.Euler(0f, mouseX, 0f)  * transform.localRotation;

@@ -17,7 +17,7 @@ public class GameOverScoreDisplay : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float p            = (gameOverScoreAbsorber.score / gameOverScoreAbsorber.attemps) * 100f;
+        float p = 0;// (gameOverScoreAbsorber.score / gameOverScoreAbsorber.attemps) * 100f;
         string strStatus = string.Format("Score: {0}\nAttemps: {1}\nPercentage: {2}%",
                            gameOverScoreAbsorber.score, 
                            gameOverScoreAbsorber.attemps,

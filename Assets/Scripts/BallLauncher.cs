@@ -35,8 +35,9 @@ public class BallLauncher : MonoBehaviour {
             Rigidbody rb = instance.GetComponent<Rigidbody>();
             //possible because the camera is a child and this script object is attached to the player
             Camera camera = GetComponentInChildren<Camera>();
-
-            rb.velocity = camera.transform.rotation * Vector3.forward * ballSpeed;
+            Vector3 myLaunchVector = new Vector3(0f, 0f, 1f);
+            rb.velocity = camera.transform.rotation * myLaunchVector * ballSpeed;
+            //ORG rb.velocity = camera.transform.rotation * Vector3.forward * ballSpeed;
         }
     }
 
